@@ -276,6 +276,7 @@
       <remote name="khronos" repo="git@gitlab.khronos.org:vulkan/vulkancts.git"/>
     </vulkancts>
     <spirvtools repo="ssh://git@gitlab.khronos.org/spirv/spirv-tools.git"/>
+    <apitrace repo="git://github.com/apitrace/apitrace.git"/>
   </repos>
 
 
