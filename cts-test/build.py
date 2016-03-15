@@ -119,7 +119,7 @@ class CtsBuilder:
         else:
             print "ERROR: no results at " + out_dir + "/results.xml"
 
-        bs.PiglitTester().check_gpu_hang()
+        bs.check_gpu_hang()
 
     def filter_tests(self, revisions, infile, outfile):
         """this method is ripped bleeding from builders.py / PiglitTester"""

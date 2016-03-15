@@ -580,41 +580,6 @@ class PiglitTester(object):
                 
         t.write(outfile)
 
-    def check_gpu_hang(self):
-        # some systems have a gpu hang watchdog which reboots
-        # machines, and others do not.   This method checks dmesg,
-        # produces a failing test if a hang is found, and schedules a
-        # reboot if the host is determined to be a jenkins builder
-        # (user=jenkins)
-        (out, _) = run_batch_command(["dmesg", "--time-format", "iso"],
-                                     quiet=True,
-                                     streamedOutput=False)
-        hang_text = ""
-        for a_line in out.split('\n'):
-            if "gpu hang" in a_line.lower():
-                hang_text = a_line
-                break
-        if not hang_text:
-            return
-
-        hostname = socket.gethostname()
-        Export().create_failing_test("gpu-hang-" + hostname,
-                                     hang_text)
-        # trigger reboot
-        if ('otc-gfxtest-' in hostname):
-            label = hostname[len('otc-gfxtest-'):]
-            o = Options()
-            o.hardware = label
-            reboot_invoke = ProjectInvoke(options=o, project="reboot-slave")
-            reboot_invoke.set_info("status", "rebuild")
-            try:
-                Jenkins(RevisionSpecification(),
-                        Options().result_path).reboot_builder(label)
-            except(urllib2.URLError):
-                print "ERROR: encountered error triggering reboot"
-            print "sleeping to allow reboot job to be scheduled."
-            time.sleep(120)
-
     def mesa_version(self):
         (out, _) = run_batch_command([self.build_root + "/bin/wflinfo",
                                       "--platform=gbm", "-a", "gl"],
