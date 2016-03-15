@@ -1,0 +1,13 @@
+diff --git a/retrace/glws_xlib.cpp b/retrace/glws_xlib.cpp
+index 56bb043..2cb6e45 100644
+--- a/retrace/glws_xlib.cpp
++++ b/retrace/glws_xlib.cpp
+@@ -239,7 +239,7 @@ showWindow(Window window)
+ {
+     // FIXME: This works for DRI drivers, but not NVIDIA proprietary drivers,
+     // for which the only solution seems to be to use Pbuffers.
+-    if (true || !ws::headless) {
++    if (!ws::headless) {
+         XMapWindow(display, window);
+         waitForEvent(window, MapNotify);
+     }

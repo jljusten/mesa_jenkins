@@ -192,7 +192,10 @@
       <prerequisite name="clean-workspace" hardware="bdwgt2-01,bdwgt2-02,bdwgt2-03,bdwgt3e-01,bdwgt3e-02,bsw-01,bsw-02,bsw-03,bsw-04,bsw-05,bsw-06,bsw-07,bsw-08,bsw-09,bxt-01,bxt-02,byt-01,byt-02,byt-03,byt-04,byt-05,byt-06,byt-07,g33-01,g33-02,g33-03,g45-01,g965-02,hswgt1-01,hswgt1-02,hswgt2-01,hswgt2-02,hswgt2-03,hswgt2-04,hswgt3e-01,hswgt3e-02,hswgt3e-03,ilk-01,ilk-02,ilk-03,ivbgt1-01,ivbgt1-02,ivbgt2-01,ivbgt2-02,kbl-01,sklgt2-01,sklgt2-02,sklgt2-03,sklgt2-04,sklgt2-05,sklgt2-06,sklgt2-07,snbgt1-01,snbgt1-02,snbgt1-03,snbgt2-01,snbgt2-02"/>
     </project>
              
-    
+    <project name="traceValidator">
+    <prerequisite name="mesa"/>
+    </project>
+
   </projects>
 
   <!-- the following servers and remotes correspond to projects -->
