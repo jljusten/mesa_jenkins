@@ -199,7 +199,7 @@ class DeqpBuilder:
             caselist = open(caselist_fn, "w")
             testlist.write_caselist(caselist)
             caselist.close()
-            self.shard_caselist(caselist_fn, o.shard)
+            self.shard_caselist(caselist_fn, "1:8")
 
         os.chdir(savedir)
 
