@@ -285,7 +285,7 @@ class DeqpBuilder:
             run_batch_command(cmd)
             Export().export_tests()
 
-        PiglitTester().check_gpu_hang()
+        check_gpu_hang()
 
     def shard_caselist(self, caselist_fn, shard):
         if shard == "0":
