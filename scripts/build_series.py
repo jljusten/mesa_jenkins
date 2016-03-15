@@ -94,6 +94,7 @@ for commit in commits:
                  "hardware" : args.hardware,
                  "rebuild" : "true",
                  "arch" : args.arch,
+                 "branch" : "vulkancts",
                  "build_support_branch" : args.build_support_branch}
     url = custom_url.format(urllib.urlencode(job_args))
 
