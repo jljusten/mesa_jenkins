@@ -45,6 +45,12 @@ class VulkanCtsBuilder(object):
             if not isinstance(package, fetch_sources.GitRepo):
                 continue
             repo_path = self._src_dir + "/external/" + package.baseDir + "/src/"
+            print "Cleaning: " + repo_path + " : " + package.revision
+            savedir = os.getcwd()
+            os.chdir(repo_path)
+            bs.run_batch_command(["git", "clean", "-xfd"])
+            bs.run_batch_command(["git", "reset", "--hard", "HEAD"])
+            os.chdir(savedir)
             print "Checking out: " + repo_path + " : " + package.revision
             repo = git.Repo(repo_path)
             repo.git.checkout(package.revision)
