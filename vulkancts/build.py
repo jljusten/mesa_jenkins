@@ -23,11 +23,6 @@ class VulkanCtsBuilder(object):
                                   self._pm.project_build_dir("vulkancts") + "/0001-Fix-PNG.patch"])
         except:
             print "WARN: failed to apply PNG patch"
-        try:
-            bs.run_batch_command(["patch", "-p1", "external/fetch_sources.py",
-                                  self._pm.project_build_dir("vulkancts") + "/0002-Fix-glslang.patch"])
-        except:
-            print "WARN: failed to apply glslang patch"
         os.chdir(save_dir)
         spirvtools = self._src_dir + "/external/spirv-tools/src"
         if not os.path.islink(spirvtools):
