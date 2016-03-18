@@ -205,12 +205,6 @@ class DeqpBuilder:
                 # filter using the deqp whitelist
                 testlist.filter_whitelist(whitelist_trie)
 
-            # filter intermittent tests
-            # TODO(janesma) : write bug
-            skips = ["functional.fragment_ops.interaction.basic_shader",
-                     "functional.shaders.random.basic_expression.combined",
-                     "functional.shaders.random.conditionals.combined"]
-            
             intermittent = DeqpTrie()
             for skip in skips:
                 intermittent.add_line("dEQP-" + module.upper() + "." + skip)
