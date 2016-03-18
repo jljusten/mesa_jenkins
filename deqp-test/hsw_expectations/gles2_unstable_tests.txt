@@ -1,2 +1,1 @@
-dEQP-GLES2.functional.flush_finish
-dEQP-GLES2.functional.shaders.random.all_features.fragment.16
+none
