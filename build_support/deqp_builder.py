@@ -205,11 +205,6 @@ class DeqpBuilder:
                 # filter using the deqp whitelist
                 testlist.filter_whitelist(whitelist_trie)
 
-            intermittent = DeqpTrie()
-            for skip in skips:
-                intermittent.add_line("dEQP-" + module.upper() + "." + skip)
-            testlist.filter(intermittent)
-
             # generate testlist file
             caselist_fn = module + "-cases.txt"
             caselist = open(caselist_fn, "w")
