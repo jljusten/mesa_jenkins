@@ -808,9 +808,9 @@
       <glslang branch="53863a3a"/>
     </branch>
 
-    <!-- This branch exists to separate nir_clone_daily build results
+    <!-- This branch exists to separate nir_torture_daily build results
          from mesa_master on the server. -->
-    <branch name="nir_test_clone" project="test-single-arch"/>
+    <branch name="nir_torture_test" project="test-single-arch"/>
 
     <branch name="pnmanolova" project="test-single-arch">
       <mesa branch="pnmanolova/jenkins"/>

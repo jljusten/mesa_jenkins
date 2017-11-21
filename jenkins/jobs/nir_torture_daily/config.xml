@@ -74,7 +74,7 @@
 rm -rf summary.xml
 rm -rf test_summary.txt
 python -u scripts/checkout_revision_spec.py
-python -u scripts/build_jenkins.py --branch=nir_test_clone --type=developer --config=debug --revision=&quot;$revision&quot; --project=piglit-test --hardware=skl --env=NIR_TEST_CLONE=true</command>
+python -u scripts/build_jenkins.py --branch=nir_torture_test --type=developer --config=debug --revision=&quot;$revision&quot; --project=piglit-test --hardware=skl --env='NIR_TEST_CLONE=true NIR_TEST_SERIALIZE=true'</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

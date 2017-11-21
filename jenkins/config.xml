@@ -187,7 +187,7 @@
         <string>mesa_custom</string>
         <string>mesa_master</string>
         <string>mesa_master_daily</string>
-        <string>nir_clone_daily</string>
+        <string>nir_torture_daily</string>
         <string>vulkancts</string>
         <string>vulkancts-daily</string>
       </jobNames>
